@@ -2,7 +2,7 @@
 /*
 Plugin Name: hid-cta-button
 Plugin URI: http://highintegritydesign.com
-Description: Provide a call-to-action button using a shortcode
+Description: Provide a call-to-action button using a shortcode within a page.
 Version: 1.0
 Author: North Krimsly
 Author URI: http://highintegritydesign.com
