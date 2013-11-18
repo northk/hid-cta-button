@@ -13,4 +13,32 @@ The default CSS class applied to the button will be `.hid-cta-button`. You can o
 
 `[hid-cta-button text="Contact Me" url="/contact-me" classes="mybutton red large"]`
 
+To get you started, here is the CSS I used to style the button. This will need to be modified to suit your site, of course!
+
+`a.hid-cta-button {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px 24px;
+    padding: 1.6rem 2.4rem;
+    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+    width: auto;
+    border: none;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+a.hid-cta-button:hover {
+    color: #fff;
+    background-color: #086CA2;
+    border: none;
+}`
+
 Brought to you by North Krimsly at [www.highintegritydesign.com](http://www.highintegritydesign.com) Enjoy!
