@@ -15,7 +15,8 @@ The default CSS class applied to the button will be `.hid-cta-button`. You can o
 
 To get you started, here is the CSS I used to style the button. This will need to be modified to suit your site, of course!
 
-`a.hid-cta-button {
+```CSS
+a.hid-cta-button {
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition:    all 0.1s ease-in-out;
     -ms-transition:     all 0.1s ease-in-out;
@@ -39,6 +40,7 @@ a.hid-cta-button:hover {
     color: #fff;
     background-color: #086CA2;
     border: none;
-}`
+}
+```
 
 Brought to you by North Krimsly at [www.highintegritydesign.com](http://www.highintegritydesign.com) Enjoy!
