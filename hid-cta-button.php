@@ -44,7 +44,10 @@ class HID_cta_button {
 
         // construct a link using the URL, classes and button text supplied 
         // in the shortcode attributes or from the default values
-        $html = "<a href='{$url}' class='{$classes}'>{$text}</a>";
+        $clean_url = esc_url($url);
+        $clean_classes = esc_html($classes);
+        $clean_text = esc_html($text);
+        $html = "<a href='" . $clean_url . "' class='" . $clean_classes . "'>" . $clean_text . "</a>";
         return $html;
     }  
 }
