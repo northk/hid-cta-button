@@ -34,20 +34,21 @@ class HID_cta_button {
 
     public function do_cta_shortcode($atts)  
     {  
-        // extract the shortcode attributes into variables and give default values
+        // extract the shortcode attributes into an args[] array and give default values
         // The default class is 'hid-cta-button' so it will hook into css for that.
-        extract(shortcode_atts(array(  
+        $args = shortcode_atts(array(  
             'text' => "Button",  
             'classes' => "hid-cta-button",  
             'url' => "http://wordpress.org"  
-        ), $atts));  
+        ), $atts);  
 
         // construct a link using the URL, classes and button text supplied 
         // in the shortcode attributes or from the default values
-        $clean_url = esc_url($url);
-        $clean_classes = esc_html($classes);
-        $clean_text = esc_html($text);
-        $html = "<a href='" . $clean_url . "' class='" . $clean_classes . "'>" . $clean_text . "</a>";
+        $args['url'] = esc_url($args['url']);
+        $args['classes'] = esc_html($args['classes']);
+        $args['text'] = esc_html($args['text']);
+        $html = "<a href='" . $args['url'] . "' class='" . $args['classes'] . "'>" . 
+                $args['text'] . "</a>";
         return $html;
     }  
 }
