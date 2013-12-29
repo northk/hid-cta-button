@@ -23,7 +23,7 @@ along with hid-cta-button. If not, see http://www.gnu.org/licenses/gpl-2.0.html
 
 */
 
-class HID_cta_button {  
+class HID_CTA_Button {  
     public function __construct()  
     {  
         // attach our 'do' function to the new shortcode. This will automatically
@@ -54,6 +54,6 @@ class HID_cta_button {
 }
 
 // construct a new instance of the cta button
-$hid_cta_button_instance = new HID_cta_button();  
+$hid_cta_button_instance = new HID_CTA_button();  
 
 ?>
