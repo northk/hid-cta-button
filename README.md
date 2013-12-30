@@ -7,13 +7,17 @@ To use it, copy the 'hid-cta-button' folder into wp-content/plugins. Then activa
 
 Use it by inserting a shortcode into a page or post like this:
 
-`[hid-cta-button text="Contact Me" url="/contact-me"]`
+`[hid-cta-button text="Contact Me" url="http://www.example.com/contact-me"]`
 
-The default CSS class applied to the button will be `.hid-cta-button`. You can optionally use a different class or classes to apply to the button like this:
+Which will give you code like this:
 
-`[hid-cta-button text="Contact Me" url="/contact-me" classes="mybutton red large"]`
+`<a href='http://www.example.com/contact-me' class='hid-cta-button'>Contact Me</a>`
 
-To get you started, here is the CSS I used to style the button. This will need to be modified to suit your site, of course!
+The default CSS class applied to the button will be `.hid-cta-button`. You can optionally use a different class to apply to the button like this:
+
+`[hid-cta-button text="Contact Me" url="http://www.example.com/contact-me" class="mybutton"]`
+
+To get you started, here is the CSS I used to style buttons on my site. The plugin has no css file included, so by default you will get no styling. The css for your site will need to be modified to suit your design, of course!
 
 ```CSS
 a.hid-cta-button {

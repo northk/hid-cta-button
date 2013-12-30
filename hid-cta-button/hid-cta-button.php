@@ -3,7 +3,7 @@
 Plugin Name: hid-cta-button
 Plugin URI: http://highintegritydesign.com
 Description: Provide a call-to-action button using a shortcode within a page.
-Version: 1.0
+Version: 1.2
 Author: North Krimsly
 Author URI: http://highintegritydesign.com
 License: GPL2
@@ -38,16 +38,34 @@ class HID_CTA_Button {
         // The default class is 'hid-cta-button' so it will hook into css for that.
         $args = shortcode_atts(array(  
             'text' => "Button",  
-            'classes' => "hid-cta-button",  
+            'class' => "hid-cta-button",  
             'url' => "http://wordpress.org"  
         ), $atts);  
 
+        // clean up the shortcode attributes
+        $args['text'] = esc_html(trim($args['text']));
+        $args['class'] = esc_html(trim($args['class']));
+        $args['url'] = esc_url(trim($args['url']));
+
+        // validate the class name against a regexp
+        if (!preg_match('/^[a-zA-Z]+[_a-zA-Z0-9-]*/', $args['class'])) {        
+            if ( true === WP_DEBUG ) {
+                error_log('hid-cta-button plugin: invalid class name attribute.');
+            }
+            return;
+        }
+
+        // validate the URL
+        if (!filter_var($args['url'], FILTER_VALIDATE_URL)) {
+            if ( true === WP_DEBUG ) {
+                error_log('hid-cta-button plugin: invalid url attribute.');
+            }
+            return;
+        }
+
         // construct a link using the URL, classes and button text supplied 
         // in the shortcode attributes or from the default values
-        $args['url'] = esc_url($args['url']);
-        $args['classes'] = esc_html($args['classes']);
-        $args['text'] = esc_html($args['text']);
-        $html = "<a href='" . $args['url'] . "' class='" . $args['classes'] . "'>" . 
+        $html = "<a href='" . $args['url'] . "' class='" . $args['class'] . "'>" . 
                 $args['text'] . "</a>";
         return $html;
     }  
